@@ -1,0 +1,34 @@
+/* CSS for ExternalContentXBlock */
+
+.externality_block .count {
+    font-weight: bold;
+}
+
+.externality_block p {
+    cursor: pointer;
+}
+
+.wrapper-comp-settings {
+    .wrapper-comp-setting {
+
+        .question-mark-wrapper {
+            display: inline-block;
+
+            .icon-question {
+
+                .before {
+                    border-top: none;
+                    border-bottom: 26px solid #dcdcdc;
+                    top: calc(100% - 1px);
+                }
+
+                .after {
+                    top: calc(100% + 4px);
+                    bottom: unset;
+                }
+
+            }
+        }
+    }
+
+}
