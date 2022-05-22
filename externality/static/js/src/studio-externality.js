@@ -9,7 +9,8 @@ function ExternalContentXBlock(runtime, element) {
 
     $('.save-button', element).bind('click', function() {
         var data = {
-            'iframe_url': $('#iframe_url').val(),
+            'content_name': $('#content_name').val(),
+            'iframe_url': $('#iframe_url').val()
         };
 
         $.post(handlerUrl, JSON.stringify(data)).complete(function() {

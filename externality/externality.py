@@ -1,4 +1,12 @@
-"""TO-DO: Write a description of what this XBlock is."""
+"""
+    When creating a course in Studio, it is possible to integrate content
+    from external tools such as Genially, Articulate, Padlet ... and many more.
+    Right now, you should copy and paste an iframe code or create it by
+    yourself (in HTML format) on a text or Raw HTML component.
+
+"""
+
+import logging
 
 from django.template import Context, Template
 from django.utils.translation import ugettext as _
@@ -7,6 +15,8 @@ from xblock.core import XBlock
 from xblock.fields import Integer, String, Scope
 from xblock.fragment import Fragment
 from xblock.exceptions import JsonHandlerError
+
+log = logging.getLogger(__name__)
 
 
 class ExternalContentXBlock(XBlock):
@@ -21,17 +31,18 @@ class ExternalContentXBlock(XBlock):
         scope=Scope.settings
     )
 
-    name = String(
-        help=_("The name of the component seen by the learners."),
+    content_name = String(
+        help=_("The name of the component."),
         display_name=_("Display Name"),
-        scope=Scope.user_state
+        default="",
+        scope=Scope.settings
     )
 
     iframe_url = String(
         display_name=_("iFrame URL"),
         help=_("Copy/Paste the iFrame link from your external tool here, more...https://csc.learning-tribes.com/2021/05/26/adding-a-genially-component/"),
         default="",
-        scope=Scope.user_state
+        scope=Scope.settings
     )
 
     def resource_string(self, path):
@@ -63,9 +74,13 @@ class ExternalContentXBlock(XBlock):
         The primary view of the ExternalContentXBlock, shown to students
         when viewing courses.
         """
-        html = self.resource_string("templates/html/externality.html")
-
-        frag = Fragment(html.format(self=self))
+        frag = Fragment()
+        frag.add_content(
+            self.render_template(
+                'templates/html/externality.html',
+                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
+            )
+        )
         frag.add_css(self.resource_string("static/css/externality.css"))
         frag.add_javascript(self.resource_string("static/js/src/externality.js"))
         frag.initialize_js('ExternalContentXBlock')
@@ -80,7 +95,7 @@ class ExternalContentXBlock(XBlock):
         frag.add_content(
             self.render_template(
                 'templates/html/studio-externality.html',
-                {'self': self, 'fields': self.xblock_field_list(['name', 'iframe_url'])}
+                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
             )
         )
         frag.add_css(self.resource_string("static/css/externality.css"))
@@ -102,23 +117,37 @@ class ExternalContentXBlock(XBlock):
         """
         completion_service = self.runtime.service(self, 'completion')
 
-        # if completion_service is None:
-        #     raise JsonHandlerError(500, u"No completion service found")
-        # elif not completion_service.completion_tracking_enabled():
-        #     raise JsonHandlerError(404, u"Completion tracking is not enabled and API calls are unexpected")
-        # if not isinstance(data['completion'], (int, float)):
-        #     message = u"Invalid completion value {}. Must be a float in range [0.0, 1.0]"
-        #     raise JsonHandlerError(400, message.format(data['completion']))
-        # elif not 0.0 <= data['completion'] <= 1.0:
-        #     message = u"Invalid completion value {}. Must be in range [0.0, 1.0]"
-        #     raise JsonHandlerError(400, message.format(data['completion']))
+        if completion_service is None:
+            raise JsonHandlerError(500, u"No completion service found")
+        elif not completion_service.completion_tracking_enabled():
+            raise JsonHandlerError(404, u"Completion tracking is not enabled and API calls are unexpected")
+        if not isinstance(data['completion'], (int, float)):
+            message = u"Invalid completion value {}. Must be a float in range [0.0, 1.0]"
+            raise JsonHandlerError(400, message.format(data['completion']))
+        elif not 0.0 <= data['completion'] <= 1.0:
+            message = u"Invalid completion value {}. Must be in range [0.0, 1.0]"
+            raise JsonHandlerError(400, message.format(data['completion']))
 
         self.runtime.publish(self, "completion", data)
 
         return {"result": "ok"}
 
-    # TO-DO: change this to create the scenarios you'd like to see in the
-    # workbench while developing your XBlock.
+    @XBlock.json_handler
+    def studio_submit(self, submissions, suffix=''):
+        if submissions['iframe_url']== "":
+            response = {
+                'result': 'error',
+                'message': 'You should give a valid URL'
+            }
+        else:
+            log.info(u'Received submissions: {}'.format(submissions))
+            self.content_name = submissions['content_name']
+            self.iframe_url = submissions['iframe_url']
+            response = {
+                'result': 'success',
+            }
+        return response
+
     @staticmethod
     def workbench_scenarios():
         """A canned scenario for display in the workbench."""
