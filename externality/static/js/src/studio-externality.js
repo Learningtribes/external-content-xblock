@@ -1,4 +1,4 @@
-/* Javascript for ExternalContentXBlock. */
+
 function ExternalContentXBlock(runtime, element) {
 
     $(function ($) {

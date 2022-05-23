@@ -16,6 +16,9 @@ from xblock.fields import Integer, String, Scope
 from xblock.fragment import Fragment
 from xblock.exceptions import JsonHandlerError
 
+from .config import SUPPORTED_EXTERNAL_RESOURCES
+
+
 log = logging.getLogger(__name__)
 
 

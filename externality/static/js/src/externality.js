@@ -1,4 +1,4 @@
-/* Javascript for ExternalContentXBlock. */
+
 function ExternalContentXBlock(runtime, element) {
 
     var handlerUrl = runtime.handlerUrl(element, 'publish_completion');

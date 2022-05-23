@@ -1,4 +1,4 @@
-"""Setup for externality XBlock."""
+"""Setup for External Content XBlock."""
 
 from __future__ import absolute_import
 
