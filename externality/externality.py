@@ -28,22 +28,22 @@ class ExternalContentXBlock(XBlock):
     """
 
     display_name = String(
-        help=_("The name of the component seen by the learners."),
-        display_name=_("Title Name"),
-        default=_("External Web Content"),      # name that appears in advanced settings studio menu
+        help=_('The name of the component seen by the learners.'),
+        display_name=_('Title Name'),
+        default=_('External Web Content'),      # name that appears in advanced settings studio menu
         scope=Scope.settings
     )
 
     content_name = String(
-        help=_("The name of the component."),
-        display_name=_("Display Name"),
-        default="",
+        help=_('The name of the component.'),
+        display_name=_('Display Name'),
+        default='',
         scope=Scope.settings
     )
 
     iframe_url = String(
-        display_name=_("iFrame URL"),
-        help=_("Copy/Paste the iFrame link from your external tool here, more...https://csc.learning-tribes.com/2021/05/26/adding-a-genially-component/"),
+        display_name=_('iFrame URL'),
+        help=_('Paste here your iFrame Code from the authoring tool, more...https://csc.learning-tribes.com/2021/05/26/adding-a-genially-component/'),
         default="",
         scope=Scope.settings
     )
@@ -133,7 +133,7 @@ class ExternalContentXBlock(XBlock):
 
         self.runtime.publish(self, "completion", data)
 
-        return {"result": "ok"}
+        return {'result': 'ok'}
 
     @XBlock.json_handler
     def studio_submit(self, submissions, suffix=''):
