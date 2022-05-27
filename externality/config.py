@@ -51,6 +51,20 @@ class SupportedExternalResources(object):
             site_link=r'https://genial.ly/en/',
             description='Helps you record and share interactive videos. Users can log social reactions into your content to help you maximize engagement.'
         )
+        self._add_resource(
+            icon='None', name='H5P',
+            tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_VIDEO],
+            paying='',
+            site_link=r'https://h5p.org/',
+            description='Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart...)'
+        )
+        self._add_resource(
+            icon='None', name='Loom',
+            tags=_ExternalComponent.TAG_SCREEN_RECORDER,
+            paying='',
+            site_link=r'https://www.loom.com/',
+            description='Record quick videos of your screen and cam.'
+        )
 
     def _add_resource(self, *args, **kwargs):
         external_component = _ExternalComponent(*args, **kwargs)
