@@ -43,7 +43,7 @@ class ExternalContentXBlock(XBlock):
 
     iframe_url = String(
         display_name=_('iFrame URL'),
-        help=_('Paste here your iFrame Code from the authoring tool, more...https://csc.learning-tribes.com/2021/05/26/adding-a-genially-component/'),
+        help=_('Paste here your iFrame Code from the authoring tool, more... https://csc.learning-tribes.com/2021/05/26/external-web-content/'),
         default="",
         scope=Scope.settings
     )
@@ -78,10 +78,13 @@ class ExternalContentXBlock(XBlock):
         when viewing courses.
         """
         frag = Fragment()
+
         frag.add_content(
             self.render_template(
                 'templates/html/externality.html',
                 {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
+                if self.iframe_url
+                else {'self': self, 'external_resources': SUPPORTED_EXTERNAL_RESOURCES}
             )
         )
         frag.add_css(self.resource_string("static/css/externality.css"))

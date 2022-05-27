@@ -32,3 +32,50 @@
     }
 
 }
+
+.supported-tags .supported-resources {
+	flex-wrap: wrap;
+	min-height: 450px;
+	padding: 0;
+}
+
+.supported-tags .supported-resources .resource-item:not(:last-of-type) {
+	margin-right: 20px;
+	margin-bottom: 20px;
+}
+
+.supported-tags .supported-tags-nav {
+	border-bottom: 1px solid grey;
+	margin: 0;
+	display: block;
+	font-size: 0;
+}
+
+.supported-tags .supported-tags-nav .nav-item {
+	display: inline-block;
+	padding-bottom: 0px;
+}
+
+.supported-tags .supported-tags-nav .nav-item:not(:last-of-type) {
+	margin-right: 25px;
+}
+
+.supported-tags .supported-tags-nav .nav-item .btn-link {
+	font-size: 16px;
+	color: grey;
+	font-weight: 300;
+	text-decoration: none !important;
+	letter-spacing: normal;
+	line-height: initial;
+	padding-bottom: 10px;
+	padding-top: 0;
+	line-height: 20px;
+	border: none;
+	padding-left: 0;
+	padding-right: 0;
+}
+
+.supported-tags .supported-tags-nav .nav-item .btn-link.active-section {
+	font-weight: 400;
+	border-bottom: 2px solid red;
+}
