@@ -18,9 +18,12 @@
             {% for resource in external_resources %}
                 <li class="swiper-slide resource-item" data-status="{{ resource.tags|join:',' }}" style="display: block;">
                     <div class="item-container">
-                        <div>{{ resource.name }}</div>
-                        <div>{{ resource.description }}</div>
-                        <div>
+                        <div class="item-title-bar">
+                            {{ resource.svg_image | safe }}
+                            <a class="item-name" target="_blank" href="{{ resource.site_link }}">{{ resource.name }}</a>
+                        </div>
+                        <div class="item-description">{{ resource.description }}</div>
+                        <div class="item-tags-bar">
                             {% for tag_name in resource.tags %}
                             <span>{{ tag_name }}</span>
                             {% endfor %}

@@ -15,13 +15,11 @@ from xblock.core import XBlock
 from xblock.fields import Integer, String, Scope
 from xblock.fragment import Fragment
 from xblock.exceptions import JsonHandlerError
-from xblockutils.resources import ResourceLoader
 
-from .config import SUPPORTED_EXTERNAL_RESOURCES
+from .config import SupportedExternalResources, SUPPORTED_EXTERNAL_RESOURCES
 
 
 log = logging.getLogger(__name__)
-loader = ResourceLoader(__name__)
 
 
 class ExternalContentXBlock(XBlock):
@@ -52,10 +50,13 @@ class ExternalContentXBlock(XBlock):
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
-        return pkg_resources.resource_string(__name__, path).decode("utf8")
+        res_str = pkg_resources.resource_string(__name__, path)
+        return res_str if isinstance(res_str, unicode) else res_str.decode("utf8")
 
     def render_template(self, template_path, context={}):
         """Evaluate a template by resource path, applying the provided context"""
+        SupportedExternalResources.assign_externality_handle(self)
+
         template = Template(self.resource_string(template_path))
 
         return template.render(Context(context))
@@ -88,16 +89,9 @@ class ExternalContentXBlock(XBlock):
                 else {'self': self, 'external_resources': SUPPORTED_EXTERNAL_RESOURCES}
             )
         )
-        # frag.content = loader.render_django_template(
-        #     'templates/html/externality.html',
-        #     {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
-        #     if self.iframe_url
-        #     else {'self': self, 'external_resources': SUPPORTED_EXTERNAL_RESOURCES}
-        #     )
         frag.add_css(self.resource_string('static/css/externality.css'))
         # Inject js Script to <head> in file: cms/static/js/views/xblock.js#L218
-        frag.add_resource(text=self.resource_string('static/js/src/externality.js'), mimetype='application/javascript', placement='foot')
-        #frag.add_javascript(self.resource_string('static/js/src/externality.js'))
+        frag.add_javascript(self.resource_string('static/js/src/externality.js'))
         frag.initialize_js('ExternalContentXBlock')
 
         return frag

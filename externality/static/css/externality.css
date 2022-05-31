@@ -37,12 +37,13 @@
     display: flex;
     clear: both;
 	flex-wrap: wrap;
-	min-height: 450px;
+	min-height: 300px;
 	padding: 0;
+	justify-content: space-between;
 }
 
 .supported-tags .supported-resources .resource-item {
-	border: 1px solid grey;
+	border: 0;
 	display: block;
 	float: left;
 }
@@ -54,22 +55,46 @@
 
 .supported-tags .supported-resources .resource-item:last-of-type {
 	margin-bottom: 20px;
-	border-bottom: 1px solid grey;
+	border: 0;
 	padding-bottom: 8px;
 }
 
 .supported-tags .supported-resources .resource-item .item-container {
-	margin: 25px 0 0 25px;
-	padding: 0px;
+	margin-top: 25px;
+	padding: 23px;
 	border: 0;
-	border-radius: 0;
-	width: 350px;
-	height: 300px;
-	background-color: #f7f6f6;
+	border-radius: 21px;
+	width: 339px;
+	height: 200px;
+	background-color: #f8f8fc;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-title-bar {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-description {
+	margin-top: 25px;
+	margin-bottom: 25px;
+	font-size: 13px;
+	color: #727272;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar {
+	font-size: 13px;
+	color: #727272;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-title-bar .item-name {
+	margin-left: 20px;
+	color: black;
 }
 
 .supported-tags .supported-tags-nav {
-	border-bottom: 1px solid grey;
+	border: 0;
 	margin: 0;
 	display: block;
 	font-size: 0;
