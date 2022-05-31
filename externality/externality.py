@@ -15,11 +15,13 @@ from xblock.core import XBlock
 from xblock.fields import Integer, String, Scope
 from xblock.fragment import Fragment
 from xblock.exceptions import JsonHandlerError
+from xblockutils.resources import ResourceLoader
 
 from .config import SUPPORTED_EXTERNAL_RESOURCES
 
 
 log = logging.getLogger(__name__)
+loader = ResourceLoader(__name__)
 
 
 class ExternalContentXBlock(XBlock):
@@ -78,7 +80,6 @@ class ExternalContentXBlock(XBlock):
         when viewing courses.
         """
         frag = Fragment()
-
         frag.add_content(
             self.render_template(
                 'templates/html/externality.html',
@@ -87,8 +88,16 @@ class ExternalContentXBlock(XBlock):
                 else {'self': self, 'external_resources': SUPPORTED_EXTERNAL_RESOURCES}
             )
         )
-        frag.add_css(self.resource_string("static/css/externality.css"))
-        frag.add_javascript(self.resource_string("static/js/src/externality.js"))
+        # frag.content = loader.render_django_template(
+        #     'templates/html/externality.html',
+        #     {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
+        #     if self.iframe_url
+        #     else {'self': self, 'external_resources': SUPPORTED_EXTERNAL_RESOURCES}
+        #     )
+        frag.add_css(self.resource_string('static/css/externality.css'))
+        # Inject js Script to <head> in file: cms/static/js/views/xblock.js#L218
+        frag.add_resource(text=self.resource_string('static/js/src/externality.js'), mimetype='application/javascript', placement='foot')
+        #frag.add_javascript(self.resource_string('static/js/src/externality.js'))
         frag.initialize_js('ExternalContentXBlock')
 
         return frag
@@ -104,9 +113,9 @@ class ExternalContentXBlock(XBlock):
                 {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
             )
         )
-        frag.add_css(self.resource_string("static/css/externality.css"))
-        frag.add_javascript(self.resource_string("static/js/src/studio-externality.js"))
-        frag.initialize_js('ExternalContentXBlock')
+        frag.add_css(self.resource_string('static/css/externality.css'))
+        frag.add_javascript(self.resource_string('static/js/src/studio-externality.js'))
+        frag.initialize_js('StudioExternalContentXBlock')
 
         return frag
 

@@ -4,19 +4,19 @@
     <p>
         {% if external_resources %}
         <div class="supported-tags" id="supported-tags">
-            <ul class="supported-tags-nav">
+            <ul class="supported-tags-nav" id="supported-tags-nav">
                 <li class="nav-item" id="all-tags">
                     <button class="btn-link active-section" title="All tags">All</button>
                 </li>
                 {% for tag_name in external_resources.listed_tags %}
-                <li class="nav-item" id="all-tags">
+                <li class="nav-item" id="{{ tag_name }}">
                     <button class="btn-link" title="{{ tag_name }}">{{ tag_name }}</button>
                 </li>
                 {% endfor %}
             </ul>
             <ul class="supported-resources">
             {% for resource in external_resources %}
-                <li class="swiper-slide resource-item" data-status="not_started" style="display: block;">
+                <li class="swiper-slide resource-item" data-status="{{ resource.tags|join:',' }}" style="display: block;">
                     <div class="item-container">
                         <div>{{ resource.name }}</div>
                         <div>{{ resource.description }}</div>

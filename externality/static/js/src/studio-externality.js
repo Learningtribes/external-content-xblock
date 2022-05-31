@@ -1,5 +1,5 @@
 
-function ExternalContentXBlock(runtime, element) {
+function StudioExternalContentXBlock(runtime, element) {
 
     $(function ($) {
         /* Here's where you'd do things on page load. */
@@ -23,9 +23,9 @@ function ExternalContentXBlock(runtime, element) {
     });
 
     if (LearningTribes && LearningTribes.QuestionMark) {
-        $wrappers = $('.wrapper-comp-settings .question-mark-wrapper')
+        $wrappers = $('.wrapper-comp-settings .question-mark-wrapper');
         $wrappers.each(function(i, wrapper){
-            new LearningTribes.QuestionMark(wrapper)
-        })
+            new LearningTribes.QuestionMark(wrapper);
+        });
     }
 }
