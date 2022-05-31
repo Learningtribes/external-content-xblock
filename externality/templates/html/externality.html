@@ -25,7 +25,21 @@
                         <div class="item-description">{{ resource.description }}</div>
                         <div class="item-tags-bar">
                             {% for tag_name in resource.tags %}
-                            <span>{{ tag_name }}</span>
+                                {% if tag_name == 'Infographics' %}
+                                <span class="item-pink-tag">{{ tag_name }}</span>
+                                {% elif tag_name == 'Presentation' %}
+                                <span class="item-yellow-tag">{{ tag_name }}</span>
+                                {% elif tag_name == 'Video' %}
+                                <span class="item-blue-tag">{{ tag_name }}</span>
+                                {% elif tag_name == 'Screen Recorder' %}
+                                <span class="item-red-tag">{{ tag_name }}</span>
+                                {% elif tag_name == 'Collaborative' %}
+                                <span class="item-green-tag">{{ tag_name }}</span>
+                                {% elif tag_name == 'Poll' %}
+                                <span class="item-purple-tag">{{ tag_name }}</span>
+                                {% else %}
+                                <span class="item-yellow-tag">{{ tag_name }}</span>
+                                {% endif %}
                             {% endfor %}
                         </div>
                     </div>

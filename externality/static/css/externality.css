@@ -88,6 +88,60 @@
 	color: #727272;
 }
 
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-yellow-tag {
+	margin: 0 20px 0 0;
+	padding: 7px 12px 7px 12px;
+	border: 0;
+	border-radius: 5px;
+	color: #ebb801;
+	background-color: #fff2c1;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-pink-tag {
+	margin: 0 20px 0 0;
+	padding: 7px 12px 7px 12px;
+	border: 0;
+	border-radius: 5px;
+	color: #eb03aa;
+	background-color: #ffc2f2;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-blue-tag {
+	margin: 0 20px 0 0;
+	padding: 7px 12px 7px 12px;
+	border: 0;
+	border-radius: 5px;
+	color: #465df0;
+	background-color: #dcdcff;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-red-tag {
+	margin: 0 20px 0 0;
+	padding: 7px 12px 7px 12px;
+	border: 0;
+	border-radius: 5px;
+	color: #ed1615;
+	background-color: #ffc2c3;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-green-tag {
+	margin: 0 20px 0 0;
+	padding: 7px 12px 7px 12px;
+	border: 0;
+	border-radius: 5px;
+	color: #83c682;
+	background-color: #d9fad9;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-purple-tag {
+	margin: 0 20px 0 0;
+	padding: 7px 12px 7px 12px;
+	border: 0;
+	border-radius: 5px;
+	color: #83c682;
+	background-color: #d9fad9;
+}
+
 .supported-tags .supported-resources .resource-item .item-container .item-title-bar .item-name {
 	margin-left: 20px;
 	color: black;
