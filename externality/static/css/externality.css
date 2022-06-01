@@ -8,6 +8,12 @@
     cursor: pointer;
 }
 
+/* Override file : "cms/static/sass/_courseware.scss" */
+.view-container .wrapper-content .content-primary>.wrapper-xblock .reorderable-container .studio-xblock-wrapper section .xblock-render>.xblock {
+	width: 100%;
+	max-width: 1800px;
+}
+
 /*.wrapper-comp-settings {*/
 /*    .wrapper-comp-setting {*/
 
