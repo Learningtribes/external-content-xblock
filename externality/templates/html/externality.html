@@ -1,5 +1,6 @@
 {% load i18n %}
 
+{% if not hide_content%}
 <div class="externality_block">
     <p>
         {% if external_resources %}
@@ -62,3 +63,4 @@
         {% endif %}
     </p>
 </div>
+{% endif %}

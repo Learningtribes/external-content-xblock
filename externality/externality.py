@@ -15,6 +15,7 @@ from xblock.core import XBlock
 from xblock.fields import Integer, String, Scope
 from xblock.fragment import Fragment
 from xblock.exceptions import JsonHandlerError
+from xblockutils.studio_editable import StudioEditableXBlockMixin
 
 from .config import SupportedExternalResources, SUPPORTED_EXTERNAL_RESOURCES
 
@@ -22,7 +23,7 @@ from .config import SupportedExternalResources, SUPPORTED_EXTERNAL_RESOURCES
 log = logging.getLogger(__name__)
 
 
-class ExternalContentXBlock(XBlock):
+class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
     """XBlock module of External Web Content Editor / Publisher
     """
 
@@ -46,6 +47,8 @@ class ExternalContentXBlock(XBlock):
         default="",
         scope=Scope.settings
     )
+
+    has_author_view = True
 
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
@@ -75,17 +78,30 @@ class ExternalContentXBlock(XBlock):
         ]
 
     def student_view(self, context=None):
-        """
-        The primary view of the ExternalContentXBlock, shown to students
-        when viewing courses.
+        """The primary view of the ExternalContentXBlock, shown to students when viewing courses.
         """
         frag = Fragment()
         frag.add_content(
             self.render_template(
                 'templates/html/externality.html',
-                {
-                    'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])
-                }
+                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
+                if self.iframe_url else {'hide_content': True}
+            )
+        )
+        frag.add_css(self.resource_string('static/css/externality.css'))
+        # Inject js Script to <head> in file: cms/static/js/views/xblock.js#L218
+        frag.add_javascript(self.resource_string('static/js/src/externality.js'))
+        frag.initialize_js('ExternalContentXBlock')
+
+        return frag
+
+    def author_view(self, context=None):
+        """View of Studio Courses page"""
+        frag = Fragment()
+        frag.add_content(
+            self.render_template(
+                'templates/html/externality.html',
+                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
                 if self.iframe_url else {
                     'self': self,
                     'external_resources': SUPPORTED_EXTERNAL_RESOURCES,
