@@ -74,6 +74,24 @@
 	padding: 0;
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-title-prefix {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	align-items: center;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-title-bar .item-title-prefix .item-name {
+	margin-left: 12px;
+	color: black;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-title-tail {
+	margin: 0 8px 0 0;
+	padding: 0;
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-description {
@@ -84,13 +102,15 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar {
-	font-size: 13px;
+	display: flex;
+	flex-wrap: wrap;
+	font-size: 12px;
 	color: #727272;
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-yellow-tag {
-	margin: 0 20px 0 0;
-	padding: 7px 12px 7px 12px;
+	margin: 0 20px 5px 0;
+	padding: 3px 9px 3px 9px;
 	border: 0;
 	border-radius: 5px;
 	color: #ebb801;
@@ -98,8 +118,8 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-pink-tag {
-	margin: 0 20px 0 0;
-	padding: 7px 12px 7px 12px;
+	margin: 0 20px 5px 0;
+	padding: 3px 9px 3px 9px;
 	border: 0;
 	border-radius: 5px;
 	color: #eb03aa;
@@ -107,8 +127,8 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-blue-tag {
-	margin: 0 20px 0 0;
-	padding: 7px 12px 7px 12px;
+	margin: 0 20px 5px 0;
+	padding: 3px 9px 3px 9px;
 	border: 0;
 	border-radius: 5px;
 	color: #465df0;
@@ -116,8 +136,8 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-red-tag {
-	margin: 0 20px 0 0;
-	padding: 7px 12px 7px 12px;
+	margin: 0 20px 5px 0;
+	padding: 3px 9px 3px 9px;
 	border: 0;
 	border-radius: 5px;
 	color: #ed1615;
@@ -125,8 +145,8 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-green-tag {
-	margin: 0 20px 0 0;
-	padding: 7px 12px 7px 12px;
+	margin: 0 20px 5px 0;
+	padding: 3px 9px 3px 9px;
 	border: 0;
 	border-radius: 5px;
 	color: #83c682;
@@ -134,17 +154,12 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-tags-bar .item-purple-tag {
-	margin: 0 20px 0 0;
-	padding: 7px 12px 7px 12px;
+	margin: 0 20px 5px 0;
+	padding: 3px 9px 3px 9px;
 	border: 0;
 	border-radius: 5px;
 	color: #ed46f0;
 	background-color: #f7dcff;
-}
-
-.supported-tags .supported-resources .resource-item .item-container .item-title-bar .item-name {
-	margin-left: 20px;
-	color: black;
 }
 
 .supported-tags .supported-tags-nav {

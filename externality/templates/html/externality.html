@@ -19,8 +19,13 @@
                 <li class="swiper-slide resource-item" data-status="{{ resource.tags|join:',' }}" style="display: block;">
                     <div class="item-container">
                         <div class="item-title-bar">
+                            <span class="item-title-prefix">
                             {{ resource.svg_image | safe }}
                             <a class="item-name" target="_blank" href="{{ resource.site_link }}">{{ resource.name }}</a>
+                            </span>
+                            {% if resource.paying %}
+                            <span class="item-title-tail">{{ usd_svg | safe }}</span>
+                            {% endif %}
                         </div>
                         <div class="item-description">{{ resource.description }}</div>
                         <div class="item-tags-bar">

@@ -2,7 +2,7 @@
 
 
 class _ExternalComponent(object):
-    """Hold information of an external web content component
+    """Hold information of an external web content component on Studio page.
     """
     TAG_INFOGRAPHICS = r'Infographics'
     TAG_PRESENTATION = r'Presentation'
@@ -55,21 +55,21 @@ class SupportedExternalResources(object):
         self._add_resource(
             icon='static/images/canva.svg', name='Canva',
             tags=_ExternalComponent.TAG_PRESENTATION,
-            paying='',
+            paying=None,
             site_link=r'https://www.canva.com/',
             description='Design absolutely anything, from logos and social media content to documents, prints and more.'
         )
         self._add_resource(
             icon='static/images/Genially.svg', name='Genially',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_INFOGRAPHICS],
-            paying='',
+            paying=None,
             site_link=r'https://genial.ly/en/',
             description='Helps you record and share interactive videos. Users can log social reactions into your content to help you maximize engagement.'
         )
         self._add_resource(
             icon='static/images/H5P.svg', name='H5P',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_VIDEO],
-            paying='',
+            paying='https://www.paying.com',
             site_link=r'https://h5p.org/',
             description='Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart...)'
         )
@@ -83,49 +83,49 @@ class SupportedExternalResources(object):
         self._add_resource(
             icon='static/images/Loom.svg', name='Padlet',
             tags=[_ExternalComponent.TAG_COLLABORATIVE, _ExternalComponent.TAG_PRESENTATION],
-            paying='',
+            paying=None,
             site_link=r'https://padlet.com/',
             description='Make beautiful tables, documents and web pages that are easy to read and fun to contribute.'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Powtoon',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO, _ExternalComponent.TAG_SCREEN_RECORDER],
-            paying='',
+            paying='https://www.paying.com',
             site_link=r'https://www.powtoon.com/',
             description='Create, manage, and distribute all of your videos and visual communications.'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Prezi',
             tags=_ExternalComponent.TAG_PRESENTATION,
-            paying='',
+            paying=None,
             site_link=r'https://prezi.com/',
             description='Create interactive visuals that appear right next to you on screen as you present, for virtual presentations that engage, inspire, and educate.'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Screencast-O-Matic',
             tags=_ExternalComponent.TAG_SCREEN_RECORDER,
-            paying='',
+            paying=None,
             site_link=r'https://screencast-o-matic.com/home',
             description='Help you easily create, edit and communicate with videos and images. Simple and intuitive tools to share your ideas.'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Thinglink',
             tags=_ExternalComponent.TAG_INFOGRAPHICS,
-            paying='',
+            paying='https://www.paying.com',
             site_link=r'https://www.thinglink.com/',
             description='Create unique experiences with interactive images, videos & 360° media'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Typeform',
             tags=_ExternalComponent.TAG_POLL,
-            paying='',
+            paying='https://www.paying.com',
             site_link=r'https://www.typeform.com/',
             description='Create forms and surveys that people enjoy answering'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Vimeo',
             tags=_ExternalComponent.TAG_VIDEO,
-            paying='',
+            paying=None,
             site_link=r'https://vimeo.com/',
             description='Simple tools for you and your team to create, manage and share high-quality videos.'
         )

@@ -23,8 +23,7 @@ log = logging.getLogger(__name__)
 
 
 class ExternalContentXBlock(XBlock):
-    """
-    TO-DO: document what your XBlock does.
+    """XBlock module of External Web Content Editor / Publisher
     """
 
     display_name = String(
@@ -84,9 +83,14 @@ class ExternalContentXBlock(XBlock):
         frag.add_content(
             self.render_template(
                 'templates/html/externality.html',
-                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
-                if self.iframe_url
-                else {'self': self, 'external_resources': SUPPORTED_EXTERNAL_RESOURCES}
+                {
+                    'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])
+                }
+                if self.iframe_url else {
+                    'self': self,
+                    'external_resources': SUPPORTED_EXTERNAL_RESOURCES,
+                    'usd_svg': self.resource_string('static/images/dollar.svg')
+                }
             )
         )
         frag.add_css(self.resource_string('static/css/externality.css'))
