@@ -162,6 +162,35 @@
 	background-color: #f7dcff;
 }
 
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .sequence-nav-button {
+	position: relative;
+	min-width: 120px;
+	max-width: 200px;
+	text-overflow: ellipsis;
+}
+
+.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .button-next {
+    border: 0;
+    background-image: none;
+    text-transform: none;
+    border-radius: 8px;
+    font-family: "Open Sans",sans-serif,黑体,SimHei,华文黑体,STHeiti,Helvetica,Arial;
+    font-weight: 600;
+    text-shadow: none;
+    cursor: pointer;
+    outline: none;
+    display: inline-flex;
+    align-items: center;
+    -webkit-font-smoothing: antialiased;
+    padding: 9px 17px;
+    font-size: 16px;
+    transition-duration: 0.25s;
+    color: #fff;
+    background-color: #e7413c;
+    box-shadow: 1px 1px 4px rgba(231,65,60,0.35);
+    min-width: 0;
+}
+
 .supported-tags .supported-tags-nav {
 	border: 0;
 	margin: 0;
