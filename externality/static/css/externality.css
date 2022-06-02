@@ -46,7 +46,8 @@
 	flex-wrap: wrap;
 	min-height: 300px;
 	padding: 0;
-	justify-content: space-between;
+	justify-content: flex-start;
+	align-content: space-around;
 }
 
 .supported-tags .supported-resources .resource-item {
