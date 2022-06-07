@@ -69,14 +69,14 @@ class SupportedExternalResources(object):
         self._add_resource(
             icon='static/images/H5P.svg', name='H5P',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_VIDEO],
-            paying='https://www.paying.com',
+            paying=True,
             site_link=r'https://h5p.org/',
             description='Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart...)'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Loom',
             tags=_ExternalComponent.TAG_SCREEN_RECORDER,
-            paying='',
+            paying=None,
             site_link=r'https://www.loom.com/',
             description='Record quick videos of your screen and cam.'
         )
@@ -90,7 +90,7 @@ class SupportedExternalResources(object):
         self._add_resource(
             icon='static/images/Loom.svg', name='Powtoon',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO, _ExternalComponent.TAG_SCREEN_RECORDER],
-            paying='https://www.paying.com',
+            paying=True,
             site_link=r'https://www.powtoon.com/',
             description='Create, manage, and distribute all of your videos and visual communications.'
         )
@@ -111,14 +111,14 @@ class SupportedExternalResources(object):
         self._add_resource(
             icon='static/images/Loom.svg', name='Thinglink',
             tags=_ExternalComponent.TAG_INFOGRAPHICS,
-            paying='https://www.paying.com',
+            paying=True,
             site_link=r'https://www.thinglink.com/',
             description='Create unique experiences with interactive images, videos & 360° media'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Typeform',
             tags=_ExternalComponent.TAG_POLL,
-            paying='https://www.paying.com',
+            paying=True,
             site_link=r'https://www.typeform.com/',
             description='Create forms and surveys that people enjoy answering'
         )

@@ -31,7 +31,7 @@
                         <div class="item-title-bar">
                             <span class="item-title-prefix">
                             {{ resource.svg_image | safe }}
-                            <a class="item-name" target="_blank" href="{{ resource.site_link }}">{{ resource.name }}</a>
+                            <a class="item-name">{{ resource.name }}</a>
                             </span>
                             {% if resource.paying %}
                             <span class="item-title-tail">{{ usd_svg | safe }}</span>
@@ -58,7 +58,7 @@
                                 {% endif %}
                             {% endfor %}
                             </span>
-                            <button class="item-tags-tail sequence-nav-button button-next" title="Go back to the previous page">
+                            <button class="item-tags-tail sequence-nav-button button-next" title="Go back to the previous page" onclick=" window.open('{{ resource.site_link }}','_blank')">
                                 <span class="icon far fa-arrow-right" aria-hidden="true"></span>
                             </button>
                         </div>
