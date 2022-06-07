@@ -12,64 +12,7 @@
             <span class="Pointing on a Picture block-label-text">External Web Content</span>
         </div>
         {% endif %}
-        {% if external_resources %}
-        <div class="supported-tags" id="supported-tags">
-            <ul class="supported-tags-nav" id="supported-tags-nav">
-                <li class="nav-item" id="all-tags">
-                    <button class="btn-link active-section" title="All tags">All</button>
-                </li>
-                {% for tag_name in external_resources.listed_tags %}
-                <li class="nav-item" id="{{ tag_name }}">
-                    <button class="btn-link" title="{{ tag_name }}">{{ tag_name }}</button>
-                </li>
-                {% endfor %}
-            </ul>
-            <ul class="supported-resources">
-            {% for resource in external_resources %}
-                <li class="swiper-slide resource-item" data-status="{{ resource.tags|join:',' }}" style="display: block;">
-                    <div class="item-container">
-                        <div class="item-title-bar">
-                            <span class="item-title-prefix">
-                            {{ resource.svg_image | safe }}
-                            <a class="item-name">{{ resource.name }}</a>
-                            </span>
-                            {% if resource.paying %}
-                            <span class="item-title-tail">{{ usd_svg | safe }}</span>
-                            {% endif %}
-                        </div>
-                        <div class="item-description">{{ resource.description }}</div>
-                        <div class="item-tags-bar">
-                            <span class="item-tags-prefix">
-                            {% for tag_name in resource.tags %}
-                                {% if tag_name == 'Infographics' %}
-                                <span class="item-pink-tag">{{ tag_name }}</span>
-                                {% elif tag_name == 'Presentation' %}
-                                <span class="item-yellow-tag">{{ tag_name }}</span>
-                                {% elif tag_name == 'Video' %}
-                                <span class="item-blue-tag">{{ tag_name }}</span>
-                                {% elif tag_name == 'Screen Recorder' %}
-                                <span class="item-red-tag">{{ tag_name }}</span>
-                                {% elif tag_name == 'Collaborative' %}
-                                <span class="item-green-tag">{{ tag_name }}</span>
-                                {% elif tag_name == 'Poll' %}
-                                <span class="item-purple-tag">{{ tag_name }}</span>
-                                {% else %}
-                                <span class="item-yellow-tag">{{ tag_name }}</span>
-                                {% endif %}
-                            {% endfor %}
-                            </span>
-                            <button class="item-tags-tail sequence-nav-button button-next" title="Go back to the previous page" onclick=" window.open('{{ resource.site_link }}','_blank')">
-                                <span class="icon far fa-arrow-right" aria-hidden="true"></span>
-                            </button>
-                        </div>
-                    </div>
-                </li>
-            {% endfor %}
-            </ul>
-        </div>
-        {% else %}
         <span class='count'>{{ self.iframe_url | safe }}</span>
-        {% endif %}
     </p>
 </div>
 {% endif %}

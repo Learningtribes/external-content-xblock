@@ -105,7 +105,7 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
         frag = Fragment()
         frag.add_content(
             self.render_template(
-                'templates/html/externality.html',
+                'templates/html/author_externality.html',
                 {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
                 if self.iframe_url else {
                     'self': self,
