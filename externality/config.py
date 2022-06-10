@@ -81,49 +81,49 @@ class SupportedExternalResources(object):
             description='Record quick videos of your screen and cam.'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Padlet',
+            icon='static/images/Padlet.svg', name='Padlet',
             tags=[_ExternalComponent.TAG_COLLABORATIVE, _ExternalComponent.TAG_PRESENTATION],
             paying=None,
             site_link=r'https://padlet.com/',
             description='Make beautiful tables, documents and web pages that are easy to read and fun to contribute.'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Powtoon',
+            icon='static/images/Powtoon.svg', name='Powtoon',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO, _ExternalComponent.TAG_SCREEN_RECORDER],
             paying=True,
             site_link=r'https://www.powtoon.com/',
             description='Create, manage, and distribute all of your videos and visual communications.'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Prezi',
+            icon='static/images/Prezi.svg', name='Prezi',
             tags=_ExternalComponent.TAG_PRESENTATION,
             paying=None,
             site_link=r'https://prezi.com/',
             description='Create interactive visuals that appear right next to you on screen as you present, for virtual presentations that engage, inspire, and educate.'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Screencast-O-Matic',
+            icon='static/images/Screencast-O-Matic.svg', name='Screencast-O-Matic',
             tags=_ExternalComponent.TAG_SCREEN_RECORDER,
             paying=None,
             site_link=r'https://screencast-o-matic.com/home',
             description='Help you easily create, edit and communicate with videos and images. Simple and intuitive tools to share your ideas.'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Thinglink',
+            icon='static/images/Thinglink.svg', name='Thinglink',
             tags=_ExternalComponent.TAG_INFOGRAPHICS,
             paying=True,
             site_link=r'https://www.thinglink.com/',
             description='Create unique experiences with interactive images, videos & 360° media'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Typeform',
+            icon='static/images/Typeform.svg', name='Typeform',
             tags=_ExternalComponent.TAG_POLL,
             paying=True,
             site_link=r'https://www.typeform.com/',
             description='Create forms and surveys that people enjoy answering'
         )
         self._add_resource(
-            icon='static/images/Loom.svg', name='Vimeo',
+            icon='static/images/Vimeo.svg', name='Vimeo',
             tags=_ExternalComponent.TAG_VIDEO,
             paying=None,
             site_link=r'https://vimeo.com/',
