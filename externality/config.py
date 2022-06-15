@@ -61,14 +61,14 @@ class SupportedExternalResources(object):
         )
         self._add_resource(
             icon='static/images/Genially.svg', name='Genially',
-            tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_INFOGRAPHICS],
+            tags=[_ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_PRESENTATION],
             paying=None,
             site_link=r'https://genial.ly/en/',
             description='Helps you record and share interactive videos. Users can log social reactions into your content to help you maximize engagement.'
         )
         self._add_resource(
             icon='static/images/H5P.svg', name='H5P',
-            tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_VIDEO],
+            tags=[_ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO],
             paying=True,
             site_link=r'https://h5p.org/',
             description='Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart...)'
@@ -89,7 +89,7 @@ class SupportedExternalResources(object):
         )
         self._add_resource(
             icon='static/images/Powtoon.svg', name='Powtoon',
-            tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO, _ExternalComponent.TAG_SCREEN_RECORDER],
+            tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_SCREEN_RECORDER, _ExternalComponent.TAG_VIDEO],
             paying=True,
             site_link=r'https://www.powtoon.com/',
             description='Create, manage, and distribute all of your videos and visual communications.'
