@@ -1,18 +1,14 @@
 {% load i18n %}
 
-{% if not hide_content%}
 <div class="externality_block">
     <p>
-        {% if show_title %}
         <div class="block-header-wrapper problem-header-wrapper">
-            <h3 class="hd hd-3 block-header problem-header">{{ component_name }}</h3>
+            <h3 class="hd hd-3 block-header problem-header">{{ display_name }}</h3>
         </div>
         <div class="block-label problem-label">
             <span class="fal fa-browser Pointing on a Picture-icon block-label-icon"></span>
             <span class="Pointing on a Picture block-label-text">External Web Content</span>
         </div>
-        {% endif %}
         <span class='count'>{{ self.iframe_url | safe }}</span>
     </p>
 </div>
-{% endif %}

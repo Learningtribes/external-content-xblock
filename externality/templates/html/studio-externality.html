@@ -7,8 +7,12 @@
       <li class="field comp-setting-entry is-set">
           <div class="wrapper-comp-setting">
             <label class="label setting-label" for="{{ field.name }}">{{ field.display_name }}</label>
-            {% if field.name == "content_name" %}
+            {% if field.name == "display_name" %}
+              {% if field.value == 'External Web Content' %}
+            <input class="input setting-input" id="{{ field.name }}" value="" type="text"/>
+              {% else %}
             <input class="input setting-input" id="{{ field.name }}" value="{{ field.value }}" type="text"/>
+              {% endif %}
             {% elif field.name == "iframe_url" %}
             <textarea class="input setting-input" rows="8" cols="50" id="{{ field.name }}">{{ field.value }}</textarea>
             <span class="question-mark-wrapper" data-title="{{ field.help }}"></span>

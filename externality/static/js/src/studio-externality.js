@@ -8,8 +8,13 @@ function StudioExternalContentXBlock(runtime, element) {
     var handlerUrl = runtime.handlerUrl(element, 'studio_submit');
 
     $('.save-button', element).bind('click', function() {
+        var assigned_name = $('#display_name').val();
+        if (assigned_name === '') {
+            assigned_name = 'External Web Content';
+        }
+
         var data = {
-            'content_name': $('#content_name').val(),
+            'display_name': assigned_name,
             'iframe_url': $('#iframe_url').val()
         };
 

@@ -1,8 +1,8 @@
 {% load i18n %}
 
-{% if not hide_content%}
 <div class="externality_block">
     <p>
+{% if not hide_content%}
         <div class="supported-tags" id="supported-tags">
             <ul class="supported-tags-nav" id="supported-tags-nav">
                 <li class="nav-item" id="all-tags">
@@ -57,6 +57,8 @@
             {% endfor %}
             </ul>
         </div>
+{% else %}
+        <span class='count'>{{ self.iframe_url | safe }}</span>
+{% endif %}
     </p>
 </div>
-{% endif %}

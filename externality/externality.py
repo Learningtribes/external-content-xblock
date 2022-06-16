@@ -34,13 +34,6 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
         scope=Scope.settings
     )
 
-    content_name = String(
-        help=_('The name of the component.'),
-        display_name=_('Display Name'),
-        default='',
-        scope=Scope.settings
-    )
-
     iframe_url = String(
         display_name=_('iFrame URL'),
         help=_('Paste here your iFrame Code from the authoring tool, <a target="_blank" href="https://csc.learning-tribes.com/2021/05/26/external-web-content/">more...</a>'),
@@ -86,11 +79,9 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
                 'templates/html/externality.html',
                 {
                     'self': self,
-                    'fields': self.xblock_field_list(['content_name', 'iframe_url']),
-                    'show_title': True,
-                    'component_name': self.content_name
+                    'fields': self.xblock_field_list(['display_name', 'iframe_url']),
+                    'display_name': self.display_name,
                 }
-                if self.iframe_url else {'hide_content': True}
             )
         )
         frag.add_css(self.resource_string('static/css/externality.css'))
@@ -106,7 +97,7 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
         frag.add_content(
             self.render_template(
                 'templates/html/author_externality.html',
-                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
+                {'self': self, 'fields': self.xblock_field_list(['display_name', 'iframe_url']), 'hide_content': True}
                 if self.iframe_url else {
                     'self': self,
                     'external_resources': SUPPORTED_EXTERNAL_RESOURCES,
@@ -129,7 +120,7 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
         frag.add_content(
             self.render_template(
                 'templates/html/studio-externality.html',
-                {'self': self, 'fields': self.xblock_field_list(['content_name', 'iframe_url'])}
+                {'self': self, 'fields': self.xblock_field_list(['display_name', 'iframe_url'])}
             )
         )
         frag.add_css(self.resource_string('static/css/externality.css'))
@@ -175,7 +166,7 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
             }
         else:
             log.info(u'Received submissions: {}'.format(submissions))
-            self.content_name = submissions['content_name']
+            self.display_name = submissions['display_name']
             self.iframe_url = submissions['iframe_url']
             response = {
                 'result': 'success',
