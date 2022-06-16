@@ -97,7 +97,7 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
         frag.add_content(
             self.render_template(
                 'templates/html/author_externality.html',
-                {'self': self, 'fields': self.xblock_field_list(['display_name', 'iframe_url']), 'hide_content': True}
+                {'self': self, 'fields': self.xblock_field_list(['display_name', 'iframe_url'])}
                 if self.iframe_url else {
                     'self': self,
                     'external_resources': SUPPORTED_EXTERNAL_RESOURCES,
