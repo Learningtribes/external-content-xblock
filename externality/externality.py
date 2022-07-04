@@ -36,7 +36,7 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
 
     iframe_url = String(
         display_name=_('iFrame Code'),
-        help=_('Paste here your iFrame Code from the authoring tool, <a target="_blank" href="https://csc.learning-tribes.com/2021/05/26/external-web-content/">more...</a>'),
+        help='Paste here your iFrame Code from the authoring tool, {link_start}more...{link_end}',
         default="",
         scope=Scope.settings
     )

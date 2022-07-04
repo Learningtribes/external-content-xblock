@@ -15,7 +15,7 @@
               {% endif %}
             {% elif field.name == "iframe_url" %}
             <textarea class="input setting-input" rows="8" cols="50" id="{{ field.name }}">{{ field.value }}</textarea>
-            <span class="question-mark-wrapper" data-title="{{ field.help }}"></span>
+            <span class="question-mark-wrapper" data-title="{% blocktrans with link_start='<a target="_blank" href="https://csc.learning-tribes.com/2021/05/26/external-web-content/">' link_end='</a>'%} Paste here your iFrame Code from the authoring tool, {{link_start}}more...{{link_end}} {% endblocktrans %}"></span>
             {% endif %}
           </div>
       </li>
