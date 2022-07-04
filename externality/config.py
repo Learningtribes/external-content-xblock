@@ -57,77 +57,77 @@ class SupportedExternalResources(object):
             tags=_ExternalComponent.TAG_PRESENTATION,
             paying=None,
             site_link=r'https://www.canva.com/',
-            description='Design absolutely anything, from logos and social media content to documents, prints and more.'
+            description=r'With thousands of professional templates, images and quality content to choose from, get a headstart on bringing your best ideas and work to life.'
         )
         self._add_resource(
             icon='static/images/Genially.svg', name='Genially',
             tags=[_ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_PRESENTATION],
             paying=None,
             site_link=r'https://genial.ly/en/',
-            description='Helps you record and share interactive videos. Users can log social reactions into your content to help you maximize engagement.'
+            description=r'Genially is an online tool that helps you record and share interactive videos. Users can log social reactions into your content to help you maximize engagement.'
         )
         self._add_resource(
             icon='static/images/H5P.svg', name='H5P',
             tags=[_ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO],
             paying=True,
             site_link=r'https://h5p.org/',
-            description='Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart...)'
+            description=r'Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart…), using html5 technology.'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Loom',
             tags=_ExternalComponent.TAG_SCREEN_RECORDER,
             paying=None,
             site_link=r'https://www.loom.com/',
-            description='Record quick videos of your screen and cam.'
+            description=r'Record quick videos of your screen and cam.'
         )
         self._add_resource(
             icon='static/images/Padlet.svg', name='Padlet',
             tags=[_ExternalComponent.TAG_COLLABORATIVE, _ExternalComponent.TAG_PRESENTATION],
             paying=None,
             site_link=r'https://padlet.com/',
-            description='Make beautiful tables, documents and web pages that are easy to read and fun to contribute.'
+            description=r'Make beautiful tables, documents and web pages that are easy to read and fun to contribute.'
         )
         self._add_resource(
             icon='static/images/Powtoon.svg', name='Powtoon',
             tags=[_ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_SCREEN_RECORDER, _ExternalComponent.TAG_VIDEO],
             paying=True,
             site_link=r'https://www.powtoon.com/',
-            description='Create, manage, and distribute all of your videos and visual communications.'
+            description=r'Create, manage, and distribute all of your videos and visual communications.'
         )
         self._add_resource(
             icon='static/images/Prezi.svg', name='Prezi',
             tags=_ExternalComponent.TAG_PRESENTATION,
             paying=None,
             site_link=r'https://prezi.com/',
-            description='Create interactive visuals that appear right next to you on screen as you present, for virtual presentations that engage, inspire, and educate.'
+            description=r'Create interactive visuals that appear right next to you on screen as you present, for virtual presentations that engage, inspire, and educate.'
         )
         self._add_resource(
             icon='static/images/Screencast-O-Matic.svg', name='Screencast-O-Matic',
             tags=_ExternalComponent.TAG_SCREEN_RECORDER,
             paying=None,
             site_link=r'https://screencast-o-matic.com/home',
-            description='Help you easily create, edit and communicate with videos and images. Simple and intuitive tools to share your ideas.'
+            description=r'Help you easily create, edit and communicate with videos and images. Simple and intuitive tools to share your ideas.'
         )
         self._add_resource(
             icon='static/images/Thinglink.svg', name='Thinglink',
             tags=_ExternalComponent.TAG_INFOGRAPHICS,
             paying=True,
             site_link=r'https://www.thinglink.com/',
-            description='Create unique experiences with interactive images, videos & 360° media'
+            description=r'Create unique experiences with interactive images, videos & 360° media.'
         )
         self._add_resource(
             icon='static/images/Typeform.svg', name='Typeform',
             tags=_ExternalComponent.TAG_POLL,
             paying=True,
             site_link=r'https://www.typeform.com/',
-            description='Create forms and surveys that people enjoy answering'
+            description=r'Create forms and surveys that people enjoy answering.'
         )
         self._add_resource(
             icon='static/images/Vimeo.svg', name='Vimeo',
             tags=_ExternalComponent.TAG_VIDEO,
             paying=None,
             site_link=r'https://vimeo.com/',
-            description='Simple tools for you and your team to create, manage and share high-quality videos.'
+            description=r'Simple tools for you and your team to create, manage and share high-quality videos.'
         )
 
     def _add_resource(self, *args, **kwargs):
