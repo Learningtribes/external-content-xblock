@@ -28,14 +28,14 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
     """
 
     display_name = String(
-        help=_('The name of the component seen by the learners.'),
-        display_name=_('Title Name'),
-        default=_('External Web Content'),      # name that appears in advanced settings studio menu
+        help='The name of the component seen by the learners.',
+        display_name='Display Name',
+        default='External Web Content',      # name that appears in advanced settings studio menu
         scope=Scope.settings
     )
 
     iframe_url = String(
-        display_name=_('iFrame Code'),
+        display_name='iFrame Code',
         help='Paste here your iFrame Code from the authoring tool, {link_start}more...{link_end}',
         default="",
         scope=Scope.settings

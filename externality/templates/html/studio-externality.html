@@ -6,7 +6,7 @@
       {% for field in fields %}
       <li class="field comp-setting-entry is-set">
           <div class="wrapper-comp-setting">
-            <label class="label setting-label" for="{{ field.name }}">{{ field.display_name }}</label>
+            <label class="label setting-label" for="{{ field.name }}">{% trans field.display_name %}</label>
             {% if field.name == "display_name" %}
               {% if field.value == 'External Web Content' %}
             <input class="input setting-input" id="{{ field.name }}" value="" type="text"/>

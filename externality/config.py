@@ -71,7 +71,7 @@ class SupportedExternalResources(object):
             tags=[_ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_PRESENTATION, _ExternalComponent.TAG_VIDEO],
             paying=True,
             site_link=r'https://h5p.org/',
-            description=r'Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart…), using html5 technology.'
+            description=r'Create interactive video, presentation or animated content (such as accordion, chart, collage, image slider, dialogue, chart...), using html5 technology.'
         )
         self._add_resource(
             icon='static/images/Loom.svg', name='Loom',
@@ -113,7 +113,7 @@ class SupportedExternalResources(object):
             tags=_ExternalComponent.TAG_INFOGRAPHICS,
             paying=True,
             site_link=r'https://www.thinglink.com/',
-            description=r'Create unique experiences with interactive images, videos & 360° media.'
+            description=u'Create unique experiences with interactive images, videos & 360° media.'
         )
         self._add_resource(
             icon='static/images/Typeform.svg', name='Typeform',
