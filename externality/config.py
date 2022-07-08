@@ -10,8 +10,8 @@ class _ExternalComponent(object):
     TAG_COLLABORATIVE = r'Collaborative'
     TAG_POLL = r'Poll'
     TAG_SCREEN_RECORDER = r'Screen Recorder'
-
-    ALL_TAGS = [TAG_INFOGRAPHICS, TAG_PRESENTATION, TAG_VIDEO, TAG_COLLABORATIVE, TAG_POLL, TAG_SCREEN_RECORDER]
+    # The order of items in `ALL_TAGS` would be used as Tabs order in Author_View
+    ALL_TAGS = [TAG_COLLABORATIVE, TAG_INFOGRAPHICS, TAG_PRESENTATION, TAG_POLL, TAG_SCREEN_RECORDER, TAG_VIDEO]
 
     def __init__(self, icon, name, description, tags, paying, site_link, get_externality_handler):
         """Constructor of External Web Content Configuration ( Support Image/Icon `SVG` only )
@@ -147,9 +147,7 @@ class SupportedExternalResources(object):
     def listed_tags(self):
         """Return supported tags which were appended in method def __init__()
         """
-        l = list(self._listed_tags)
-        l.sort()    # alphabet order
-        return l
+        return [tag for tag in _ExternalComponent.ALL_TAGS if self._listed_tags]
 
     @classmethod
     def assign_externality_handle(cls, obj):
