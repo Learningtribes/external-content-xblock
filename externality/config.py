@@ -63,7 +63,7 @@ class SupportedExternalResources(object):
             icon='static/images/Genially.svg', name='Genially',
             tags=[_ExternalComponent.TAG_INFOGRAPHICS, _ExternalComponent.TAG_PRESENTATION],
             paying=None,
-            site_link=r'https://genial.ly/en/',
+            site_link=r'https://genial.ly',
             description=r'Genially is an online tool that helps you record and share interactive videos. Users can log social reactions into your content to help you maximize engagement.'
         )
         self._add_resource(
