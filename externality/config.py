@@ -147,7 +147,7 @@ class SupportedExternalResources(object):
     def listed_tags(self):
         """Return supported tags which were appended in method def __init__()
         """
-        return [tag for tag in _ExternalComponent.ALL_TAGS if self._listed_tags]
+        return [tag for tag in _ExternalComponent.ALL_TAGS if tag in self._listed_tags]
 
     @classmethod
     def assign_externality_handle(cls, obj):
