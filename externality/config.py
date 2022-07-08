@@ -147,7 +147,9 @@ class SupportedExternalResources(object):
     def listed_tags(self):
         """Return supported tags which were appended in method def __init__()
         """
-        return list(self._listed_tags)
+        l = list(self._listed_tags)
+        l.sort()    # alphabet order
+        return l
 
     @classmethod
     def assign_externality_handle(cls, obj):
