@@ -102,7 +102,7 @@
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-title-bar .item-title-prefix .item-name {
-	margin-left: 12px;
+	margin: 0 12px 0 12px;
 	color: black;
 	font-family: 'Open Sans';
 	font-size: 16px;
