@@ -263,5 +263,6 @@
 }
 
 .supported-tags .supported-tags-nav .nav-item .btn-link.active-section {
+	color: red;
 	border-bottom: 2px solid red;
 }
