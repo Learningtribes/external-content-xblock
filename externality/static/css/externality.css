@@ -73,12 +73,17 @@
 
 .supported-tags .supported-resources .resource-item .item-container {
 	margin-top: 25px;
-	padding: 23px;
-	border: 0;
+	padding: 21px;
+	border: 3px solid #FFFFFF;
 	border-radius: 12px;
-	width: 339px;
+	width: 337px;
 	height: 200px;
 	background-color: #f8f8fc;
+	cursor: pointer;
+}
+
+.supported-tags .supported-resources .resource-item .item-container:hover {
+   border-color: rgba(231,65,60,0.4);
 }
 
 .supported-tags .supported-resources .resource-item .item-container .item-title-bar {
@@ -221,13 +226,6 @@
     background-color: #e7413c;
     box-shadow: 1px 1px 4px rgba(231,65,60,0.35);
     min-width: 0;
-}
-
-.supported-tags .supported-resources .resource-item .item-container .item-tags-bar .button-next:hover {
-    transition-duration: .5s;
-    border: 2px solid #FFFFFF;
-	color: #1A1919;
-	background-color: #FFFFFF;
 }
 
 .supported-tags .supported-tags-nav {

@@ -17,7 +17,7 @@
             <ul class="supported-resources">
             {% for resource in external_resources %}
                 <li class="swiper-slide resource-item" data-status="{{ resource.tags|join:',' }}" style="display: block;">
-                    <div class="item-container">
+                    <div class="item-container" onclick=" window.open('{{ resource.site_link }}','_blank')">
                         <div class="item-title-bar">
                             <span class="item-title-prefix">
                             {{ resource.svg_image | safe }}
@@ -48,9 +48,6 @@
                                 {% endif %}
                             {% endfor %}
                             </span>
-                            <button class="item-tags-tail sequence-nav-button button-next" title="Access this website" onclick=" window.open('{{ resource.site_link }}','_blank')">
-                                <span class="icon far fa-arrow-right" aria-hidden="true"></span>
-                            </button>
                         </div>
                     </div>
                 </li>
