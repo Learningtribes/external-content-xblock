@@ -77,7 +77,7 @@
 	border: 3px solid #FFFFFF;
 	border-radius: 12px;
 	width: 337px;
-	height: 200px;
+	height: auto;
 	background-color: #f8f8fc;
 	cursor: pointer;
 }
