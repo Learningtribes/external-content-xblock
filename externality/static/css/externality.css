@@ -263,6 +263,5 @@
 }
 
 .supported-tags .supported-tags-nav .nav-item .btn-link.active-section {
-	font-weight: 400;
 	border-bottom: 2px solid red;
 }
