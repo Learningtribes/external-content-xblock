@@ -3,17 +3,21 @@
         /* Here's where you'd do things on page load. */
     });
 
-    window.onload = function() {
-        setTimeout(function() {
-            var data = {
-                'completion': 1.0,
-            };
-            var handlerUrl = runtime.handlerUrl(element, 'publish_completion');
+    if ($('.externalityxblock_block').length > 0) {
+        // In LMS page, we mark as completed for this user.
+        window.onload = function () {
+            setTimeout(function () {
+                var data = {
+                    'completion': 1.0,
+                };
+                var handlerUrl = runtime.handlerUrl(element, 'publish_completion');
 
-            $.post(handlerUrl, JSON.stringify(data)).complete(function() {});
-        }, 1000);
+                $.post(handlerUrl, JSON.stringify(data)).complete(function () {
+                });
+            }, 1000);
 
-    };
+        };
+    }
 
     function updateResList(activeTab) {
         var $resources = $(".supported-resources li.resource-item");
