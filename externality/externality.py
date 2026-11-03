@@ -9,7 +9,7 @@
 import logging
 
 from django.template import Context, Template
-from django.utils.translation import ugettext as _
+from django.utils.translation import gettext as _
 import pkg_resources
 from xblock.core import XBlock
 from xblock.fields import Integer, String, Scope
@@ -46,15 +46,15 @@ class ExternalContentXBlock(StudioEditableXBlockMixin, XBlock):
     def resource_string(self, path):
         """Handy helper for getting resources from our kit."""
         res_str = pkg_resources.resource_string(__name__, path)
-        return res_str if isinstance(res_str, unicode) else res_str.decode("utf8")
+        return res_str if isinstance(res_str, str) else res_str.decode("utf8")
 
-    def render_template(self, template_path, context={}):
+    def render_template(self, template_path, context=None):
         """Evaluate a template by resource path, applying the provided context"""
         SupportedExternalResources.assign_externality_handle(self)
 
         template = Template(self.resource_string(template_path))
 
-        return template.render(Context(context))
+        return template.render(Context(context or {}))
 
     def xblock_field_list(self, field_names):
         """Handy helper for getting a dictionary of fields"""
